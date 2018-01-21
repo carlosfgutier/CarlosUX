@@ -1,4 +1,6 @@
 $(document).ready( function(){
+    $("#body").fadeIn(1000);
+
     init();
 
     //Get the canvas & context 
@@ -14,23 +16,13 @@ $(document).ready( function(){
         c.attr('height', $(container).height() ); //max height
     }
 
-    //Initial call
     respondCanvas();
 }); 
 
-// $(document).ready( function(){
-//     init();
+//
 
-//     canvas = document.getElementById('can');
- 
-//     // Set canvas dimensions
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
 
-//     //Initial call
-//     // respondCanvas();
-// }); 
-
+//DRAWING CANVAS
 var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
