@@ -1,5 +1,5 @@
 $(document).ready( function(){
-    $("#body").fadeIn(1000);
+    // $("#body").fadeIn(1000);
 
     init();
 
@@ -20,6 +20,9 @@ $(document).ready( function(){
 }); 
 
 //
+$("#menuButton").click(function() {
+  $("#menu").toggle("slide");
+});
 
 
 //DRAWING CANVAS
