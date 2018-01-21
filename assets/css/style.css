@@ -1,6 +1,8 @@
 body {
+	display: none;
 	background-color: white;
 	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 #canContainer {
@@ -51,6 +53,36 @@ body {
 }
 
 /*-----------------------------------*/
+.menuButton {
+	width: 50px;
+	height: auto;
+	position:fixed;
+	top: 1%;
+	right: 40px;
+	z-index: 2;
+}
+
+.menuButton:hover {
+	cursor: pointer;
+}
+
+#menu {
+	font-family: 'BenchNine', sans-serif;
+	font-size: 30px;
+	position: absolute;
+	top: 7%;
+	right: 13px;
+	z-index: 2;
+}
+
+#menu a {
+	color: black;
+}
+
+#menu li {
+	margin: 15px 0;
+}
+
 .tools {
 	position:fixed;
 	bottom: 10px;
@@ -59,18 +91,6 @@ body {
 }
 
 .tools img {
-	width: 20px;
-	height: auto;
-}
-
-.testButton {
-	position:fixed;
-	bottom: 50%;
-	left: 97%;
-	z-index: 2;
-}
-
-.testButton img {
 	width: 20px;
 	height: auto;
 }
