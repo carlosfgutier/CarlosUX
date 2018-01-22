@@ -6,37 +6,33 @@
   <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
   <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
-
   <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <link href="https://fonts.googleapis.com/css?family=BenchNine:300" rel="stylesheet">
 </head>
-<body id="body">
+<body id="contactBody">
 
   <div id="container">
     <aside id="canContainer">
       <canvas id="can" width="100" height="100"></canvas>
     </aside>
-      <br>
 
-    <div id=mainProfile>
-      <section id="photoSection">
-          <div class="col s12">
-            <img class="photo" src="assets/images/photo.jpg" alt="profile picture">
-          </div>
-        </section>
-
-        <section id="short">
-          <div class="col s12 about">
-            <h3>HI, MY NAME IS CARLOS!</h3>
-
-            <p>I'm a full stack junior web developer with a background in psychological research and a passion for technology and design.<br>
-            I like fun things.<br>
-          (...Like how you can draw anywhere on this page)</p>
-
-          </div>
-        </section>
+    <div id=formWrapper>
+      <form id="contactForm">
+        <ul>
+          <li>
+            <input type="text" id="name" name="name" placeholder="Your Name" required="required">
+          </li>
+          <li>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
+          </li>
+          <li>
+            <textarea id="message" name="message" required="required" placeholder="Message"></textarea>
+          </li>
+        </ul>
+        <input id="submitButton" type="submit">
+      </form>
     </div>
 
     <img id="menuButton" src="assets/images/menuSprite.png" alt="Menu">
@@ -71,20 +67,3 @@
 
 </body>
 </html>
-
-<div id="menu">
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Lab</a></li>
-        <li>
-          <a href="https://github.com/carlosfgutier" target="_blank"><img class="social" src="assets/images/mailIcon.png" alt="Email"></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/carlosfgutier/" target="_blank"><img class="social" src="assets/images/liIcon.svg" alt="LinkedIn"></a>
-        </li>
-        <li>
-          <a href="https://github.com/carlosfgutier" target="_blank"><img class="social" src="assets/images/ghIcon.svg" alt="Github"></a> 
-        </li>
-      </ul>
-    </div>

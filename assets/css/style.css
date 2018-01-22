@@ -1,8 +1,8 @@
 body {
 	/*display: none;*/
 	background-color: white;
-	/*overflow-y: hidden;*/
-	/*overflow-x: hidden;*/
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 #canContainer {
@@ -88,7 +88,44 @@ body {
 
 /*-----------------------------------*/
 /* CONTACT SECTION */
+#contactBody {
+	background-image: url("../images/city.jpg");
+	background-size: 60%;
+	background-repeat: no-repeat;
+}
 
+#contactForm {
+	width: 50%;
+	height: auto;
+	text-align: center;
+	position: absolute;	
+	top: 20%;
+	left: 25%;
+	right: 25%;
+	z-index: 2;
+}
+
+#contactForm input {
+	font-family: 'BenchNine', sans-serif;
+	font-size: 30px;
+	border-color: black;
+}
+
+#contactForm textarea {
+	font-family: 'BenchNine', sans-serif;
+	font-size: 20px;
+	width: 100%;
+	height: 300px;
+	border-radius: 5px;
+	resize: none;
+}
+
+#submitButton {
+	border-radius: 5px;
+	border-color: black;
+	background-color: white;
+	margin-top: 10px;
+}
 
 /*-----------------------------------*/
 /* DRAWING TOOLS */
