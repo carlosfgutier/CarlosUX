@@ -48,6 +48,10 @@ body {
 	font-size: 30px;
 }
 
+.striked {
+	text-decoration: line-through;
+}
+
 /*-----------------------------------*/
 /* MENU */
 #menuButton {
@@ -189,12 +193,12 @@ body {
 	height: auto;
 }
 
-#pencil:hover {
+#black:hover {
 	width: 40px;
 	height: auto;
 }
 
-#eraser:hover {
+#white:hover {
 	width: 40px;
 	height: auto;
 }

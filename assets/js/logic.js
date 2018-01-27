@@ -1,6 +1,4 @@
 $(document).ready( function(){
-    // $("#body").fadeIn(1000);
-
     init();
 
     //Get the canvas & context 
@@ -19,9 +17,9 @@ $(document).ready( function(){
     respondCanvas();
 }); 
 
-//
-$("#menuButton").click(function() {
-  $("#menu").toggle("slide");
+//NAV
+$('#menuButton').click(function() {
+  $('#menu').toggle('slide');
 });
 
 
@@ -33,25 +31,25 @@ var canvas, ctx, flag = false,
     currY = 0,
     dot_flag = false;
 
-var x = "black",
+var x = 'black',
     y = 2;
 
 function init() {
     canvas = document.getElementById('can');
-    ctx = canvas.getContext("2d");
+    ctx = canvas.getContext('2d');
     w = canvas.width;
     h = canvas.height;
 
-    canvas.addEventListener("mousemove", function (e) {
+    canvas.addEventListener('mousemove', function (e) {
         findxy('move', e)
     }, false);
-    canvas.addEventListener("mousedown", function (e) {
+    canvas.addEventListener('mousedown', function (e) {
         findxy('down', e)
     }, false);
-    canvas.addEventListener("mouseup", function (e) {
+    canvas.addEventListener('mouseup', function (e) {
         findxy('up', e)
     }, false);
-    canvas.addEventListener("mouseout", function (e) {
+    canvas.addEventListener('mouseout', function (e) {
         findxy('out', e)
     }, false);
 }
@@ -64,6 +62,19 @@ function draw() {
     ctx.lineWidth = y;
     ctx.stroke();
     ctx.closePath();
+}
+
+function color(obj) {
+    switch (obj.id) {
+        case "black":
+            x = "black";
+            break;
+        case "white":
+            x = "white";
+            break;
+    }
+    if (x == "white") y = 30;
+    else y = 2;
 }
 
 function findxy(res, e) {
@@ -83,7 +94,7 @@ function findxy(res, e) {
             dot_flag = false;
         }
     }
-    if (res == 'up' || res == "out") {
+    if (res == 'up' || res == 'out') {
         flag = false;
     }
     if (res == 'move') {
@@ -96,3 +107,12 @@ function findxy(res, e) {
         }
     }
 }
+
+//DRAWING TOOLS
+$('#black').on('click', function() {
+    color(this);
+});
+
+$('#white').on('click', function() {
+    color(this);
+})
