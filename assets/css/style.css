@@ -45,7 +45,7 @@ body {
 }
 
 #short p {
-	font-size: 25px;
+	font-size: 30px;
 }
 
 /*-----------------------------------*/
@@ -164,6 +164,10 @@ body {
 	resize: none;
 }
 
+#message:focus {
+	background-color: white;
+}
+
 #submitButton {
 	border-radius: 5px;
 	border-color: black;
@@ -182,5 +186,15 @@ body {
 
 .tools img {
 	width: 20px;
+	height: auto;
+}
+
+#pencil:hover {
+	width: 40px;
+	height: auto;
+}
+
+#eraser:hover {
+	width: 40px;
 	height: auto;
 }
