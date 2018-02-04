@@ -1,68 +1,94 @@
-$(document).ready( function(){
-    init();
+//Get the canvas & context 
+var c = $('#can');
+var ct = c.get(0).getContext('2d');
+var container = $(c).parent();
 
-    //Get the canvas & context 
-    var c = $('#can');
-    var ct = c.get(0).getContext('2d');
-    var container = $(c).parent();
+//Run function when browser resizes
+$(window).resize( respondCanvas );
 
-    //Run function when browser resizes
-    $(window).resize( respondCanvas );
+function respondCanvas(){
+    c.attr('width', $(container).width() ); //max width
+    c.attr('height', $(container).height() ); //max height
+}
 
-    function respondCanvas(){
-        c.attr('width', $(container).width() ); //max width
-        c.attr('height', $(container).height() ); //max height
-    }
-
-    respondCanvas();
-}); 
+respondCanvas();
 
 //NAV
 $('#menuButton').click(function() {
   $('#menu').toggle('slide');
 });
 
+// Setup canvas .. 
+var c = document.getElementById('can');
+  ct = c.getContext('2d');
 
-//DRAWING CANVAS
-var canvas, ctx, flag = false,
-    prevX = 0,
-    currX = 0,
-    prevY = 0,
-    currY = 0,
-    dot_flag = false;
+// setup lines styles .. 
+ct.strokeStyle = "black";
+ct.lineWidth = 2;
 
-var x = 'black',
-    y = 2;
+// some variables we'll need .. 
+var drawing = false;
+var mousePos = {x:0, y:0};
+var lastPos = mousePos;
+var isMobile = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
-function init() {
-    canvas = document.getElementById('can');
-    ctx = canvas.getContext('2d');
-    w = canvas.width;
-    h = canvas.height;
+// mouse/touch events ..
+c.addEventListener((isMobile ? 'touchstart' : 'mousedown'), function(e) {
+  drawing = true;
+  lastPos = getMousePos(c, e);
+  mousePos = lastPos;
+});
+c.addEventListener((isMobile ? 'touchmove' : 'mousemove'), function(e) {
+  mousePos = getMousePos(c, e);
+});
+c.addEventListener((isMobile ? 'touchend' : 'mouseup'), function(e) {
+  drawing = false;
+});
 
-    canvas.addEventListener('mousemove', function (e) {
-        findxy('move', e)
-    }, false);
-    canvas.addEventListener('mousedown', function (e) {
-        findxy('down', e)
-    }, false);
-    canvas.addEventListener('mouseup', function (e) {
-        findxy('up', e)
-    }, false);
-    canvas.addEventListener('mouseout', function (e) {
-        findxy('out', e)
-    }, false);
-}
+// helper functions .. 
+function getMousePos(canvasDom, touchOrMouseEvent) {
+  var rect = canvasDom.getBoundingClientRect();
+  return {
+    x: (isMobile ? touchOrMouseEvent.touches[0].clientX : touchOrMouseEvent.clientX) - rect.left,
+    y: (isMobile ? touchOrMouseEvent.touches[0].clientY : touchOrMouseEvent.clientY) - rect.top
+  };
+};
 
-function draw() {
-    ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
-    ctx.strokeStyle = x;
-    ctx.lineWidth = y;
-    ctx.stroke();
-    ctx.closePath();
-}
+// drawing .. 
+window.requestAnimFrame = (function(callback) {
+  return  window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000/60);
+      };
+})();
+
+function renderCanvas() {
+  if (drawing) {
+    ct.moveTo(lastPos.x, lastPos.y);
+    ct.lineTo(mousePos.x, mousePos.y);
+    ct.stroke();
+    lastPos = mousePos;
+  }
+};
+
+(function drawLoop() {
+  requestAnimFrame(drawLoop);
+  renderCanvas();
+})();
+
+
+//DRAWING TOOLS
+$('#black').on('click', function() {
+    color(this);
+});
+
+$('#white').on('click', function() {
+    color(this);
+})
 
 function color(obj) {
     switch (obj.id) {
@@ -76,43 +102,3 @@ function color(obj) {
     if (x == "white") y = 30;
     else y = 2;
 }
-
-function findxy(res, e) {
-    if (res == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - canvas.offsetLeft;
-        currY = e.clientY - canvas.offsetTop;
-
-        flag = true;
-        dot_flag = true;
-        if (dot_flag) {
-            ctx.beginPath();
-            ctx.fillStyle = x;
-            ctx.fillRect(currX, currY, 2, 2);
-            ctx.closePath();
-            dot_flag = false;
-        }
-    }
-    if (res == 'up' || res == 'out') {
-        flag = false;
-    }
-    if (res == 'move') {
-        if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
-            draw();
-        }
-    }
-}
-
-//DRAWING TOOLS
-$('#black').on('click', function() {
-    color(this);
-});
-
-$('#white').on('click', function() {
-    color(this);
-})
