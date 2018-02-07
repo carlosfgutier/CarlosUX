@@ -7,8 +7,8 @@ var container = $(c).parent();
 $(window).resize( respondCanvas );
 
 function respondCanvas(){
-    c.attr('width', $(container).width() ); //max width
-    c.attr('height', $(container).height() ); //max height
+  $('#can').attr('width', $(container).width() ); //max width
+  $('#can').attr('height', $(container).height() ); //max height
 }
 
 respondCanvas();
