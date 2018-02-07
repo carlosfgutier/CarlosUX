@@ -202,3 +202,27 @@ body {
 	width: 40px;
 	height: auto;
 }
+
+/*-----------------------------------*/
+/* MEDIA QUERY */
+@media only screen 
+  	and (min-device-width: 375px) 
+  	and (max-device-width: 667px) 
+  	and (-webkit-min-device-pixel-ratio: 2) {
+
+	html{
+        background-color: red;
+        overflow: hidden;
+        width:100%;
+    }
+    body{
+        height:100%;
+        position:fixed; /* prevent overscroll bounce*/
+        background-color: lightgreen;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
+        width:100%;                    
+        margin-left:25%;
+    }
+
+}

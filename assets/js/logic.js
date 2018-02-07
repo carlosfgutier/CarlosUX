@@ -82,23 +82,23 @@ function renderCanvas() {
 
 
 //DRAWING TOOLS
-$('#black').on('click', function() {
-    color(this);
-});
+// $('#black').on('click', function() {
+//     color(this);
+// });
 
-$('#white').on('click', function() {
-    color(this);
-})
+// $('#white').on('click', function() {
+//     color(this);
+// })
 
-function color(obj) {
-    switch (obj.id) {
-        case "black":
-            x = "black";
-            break;
-        case "white":
-            x = "white";
-            break;
-    }
-    if (x == "white") y = 30;
-    else y = 2;
-}
+// function color(obj) {
+//     switch (obj.id) {
+//         case "black":
+//             x = "black";
+//             break;
+//         case "white":
+//             x = "white";
+//             break;
+//     }
+//     if (x == "white") y = 30;
+//     else y = 2;
+// }
