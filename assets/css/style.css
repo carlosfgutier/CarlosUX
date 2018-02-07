@@ -211,14 +211,13 @@ body {
   	and (-webkit-min-device-pixel-ratio: 2) {
 
 	html{
-        background-color: red;
         overflow: hidden;
         width:100%;
     }
     body{
         height:100%;
         position:fixed; /* prevent overscroll bounce*/
-        background-color: lightgreen;
+        background-color: white;
         overflow: hidden;
         -webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
         width:100%;                    
