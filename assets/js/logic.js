@@ -20,7 +20,7 @@ $('#menuButton').click(function() {
 
 // Setup canvas .. 
 var c = document.getElementById('can');
-  ct = c.getContext('2d');
+    ct = c.getContext('2d');
 
 // setup lines styles .. 
 ct.strokeStyle = "black";
