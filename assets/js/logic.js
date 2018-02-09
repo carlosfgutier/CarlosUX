@@ -82,6 +82,10 @@ function renderCanvas() {
 
 
 //DRAWING TOOLS
+$('#clearButton').on('click', function() {
+  location.reload();
+});
+
 // $('#black').on('click', function() {
 //     color(this);
 // });
