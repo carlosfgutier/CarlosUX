@@ -10,7 +10,6 @@ function respondCanvas(){
   $('#can').attr('width', $(container).width() ); //max width
   $('#can').attr('height', $(container).height() ); //max height
 }
-
 respondCanvas();
 
 //NAV
@@ -18,7 +17,7 @@ $('#menuButton').click(function() {
   $('#menu').toggle('slide');
 });
 
-// Setup canvas .. 
+// Setup canvas 
 var c = document.getElementById('can');
     ct = c.getContext('2d');
 
@@ -26,7 +25,6 @@ var c = document.getElementById('can');
 ct.strokeStyle = "black";
 ct.lineWidth = 2;
 
-// some variables we'll need .. 
 var drawing = false;
 var mousePos = {x:0, y:0};
 var lastPos = mousePos;
@@ -45,7 +43,7 @@ c.addEventListener((isMobile ? 'touchend' : 'mouseup'), function(e) {
   drawing = false;
 });
 
-// helper functions .. 
+// helper functions
 function getMousePos(canvasDom, touchOrMouseEvent) {
   var rect = canvasDom.getBoundingClientRect();
   return {
@@ -54,7 +52,7 @@ function getMousePos(canvasDom, touchOrMouseEvent) {
   };
 };
 
-// drawing .. 
+// drawing
 window.requestAnimFrame = (function(callback) {
   return  window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
@@ -85,24 +83,3 @@ function renderCanvas() {
 $('#clearButton').on('click', function() {
   location.reload();
 });
-
-// $('#black').on('click', function() {
-//     color(this);
-// });
-
-// $('#white').on('click', function() {
-//     color(this);
-// })
-
-// function color(obj) {
-//     switch (obj.id) {
-//         case "black":
-//             x = "black";
-//             break;
-//         case "white":
-//             x = "white";
-//             break;
-//     }
-//     if (x == "white") y = 30;
-//     else y = 2;
-// }
