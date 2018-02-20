@@ -190,6 +190,21 @@ body {
 	height: auto;
 }
 
+#RPS {
+	width: 150px;
+	height: auto;
+	position: absolute;
+	bottom: 20%;
+	left: 200px;
+	transform: rotate(25deg);
+	z-index: 2;
+}
+
+#RPS:hover {
+	width: 160px;
+	height: auto;
+}
+
 /*-----------------------------------*/
 /* CONTACT SECTION */
 #contactBody {
