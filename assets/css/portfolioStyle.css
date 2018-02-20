@@ -1,0 +1,41 @@
+/*-----------------------------------*/
+/* PORTFOLIO SECTION */
+#projects {
+	position: absolute;
+	top: 1%;
+	left: 10px;
+	overflow-x: scroll;
+	max-height: 98%;
+	z-index: 2;
+}
+
+.singleProject {
+	font-size: 30px;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+	color: white;
+	background-color: black;
+	margin-bottom: 10px;
+}
+
+.singleProject p {
+	padding-top: 40%;
+}
+
+.singleProject:hover {
+	color: black;
+	background-color: white;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+}
+
+#drawComment {
+	font-size: 30px;
+	position: absolute;
+	top: 350px;
+	left: 200px;
+	max-width: 30%;
+
+}
