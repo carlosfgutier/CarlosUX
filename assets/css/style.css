@@ -1,5 +1,6 @@
 body {
 	/*display: none;*/
+	font-family: 'BenchNine', sans-serif;
 	background-color: white;
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -36,7 +37,6 @@ body {
 }
 
 #short {
-	font-family: 'BenchNine', sans-serif;
 	color: black;
 	text-align: center;
 	max-width: 100%;
@@ -69,7 +69,6 @@ body {
 
 #menu {
 	display: none;
-	font-family: 'BenchNine', sans-serif;
 	font-size: 30px;
 	position: absolute;
 	top: 7%;
@@ -102,7 +101,6 @@ body {
 }
 
 .singleProject {
-	font-family: 'BenchNine', sans-serif;
 	font-size: 30px;
 	text-align: center;
 	width: 150px;
@@ -125,13 +123,56 @@ body {
 }
 
 #drawComment {
-	font-family: 'BenchNine', sans-serif;
 	font-size: 30px;
 	position: absolute;
 	top: 350px;
 	left: 200px;
 	max-width: 30%;
 
+}
+
+/*-----------------------------------*/
+/* SANDBOX SECTION */
+#tape {
+	color: black;
+	font-size: 30px;
+	width: 100%;
+	padding: 5px 0;
+	position: absolute;
+	bottom: 50%;
+	/* Starting position */
+	 -moz-transform:translateX(100%);
+	 -webkit-transform:translateX(100%);	
+	 transform:translateX(100%);
+	 /* Apply animation to this element */	
+	 -moz-animation: tape 30s linear infinite;
+	 -webkit-animation: tape 30s linear infinite;
+	 animation: tape 30s linear infinite;
+}
+
+/* slide accross animation*/
+@-moz-keyframes tape {
+	0%   { -moz-transform: translateX(100%); }
+	100% { -moz-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes tape {
+	0%   { -webkit-transform: translateX(100%); }
+	100% { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes tape {
+ 0%   { 
+		-moz-transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%); 		
+	}
+
+ 100% { 
+		-moz-transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%); 
+	}
 }
 
 /*-----------------------------------*/
@@ -154,13 +195,11 @@ body {
 }
 
 #contactForm input {
-	font-family: 'BenchNine', sans-serif;
 	font-size: 30px;
 	border-color: black;
 }
 
 #contactForm textarea {
-	font-family: 'BenchNine', sans-serif;
 	font-size: 20px;
 	width: 100%;
 	height: 300px;
