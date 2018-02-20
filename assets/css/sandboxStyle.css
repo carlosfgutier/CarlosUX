@@ -1,0 +1,117 @@
+/*-----------------------------------*/
+/* SANDBOX SECTION */
+#toDosSection {
+	width: 20%;
+	height: 20%;
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	z-index: 2;
+}
+
+#toDosTitle:hover {
+	background-color: pink;
+	cursor: pointer;
+}
+
+#toDosTitle {
+	font-size: 25px;
+	font-weight: bolder;
+	display: inline-block;
+	padding: 2px;
+	border-top: solid black 3px;
+	border-left: solid black 3px;
+	border-right: solid black 3px;
+	background-color: lightblue;
+}
+
+#toDosContainer {
+	width: 100%;
+	min-width: 100px;
+	height: 100%;
+	min-height: 100px;
+	padding: 2px;
+	border: solid;
+	border-color: black;
+	border width: 3px;
+	resize: both;
+	overflow: auto;
+}
+
+#toDos {
+	font-size: 25px;
+	width: 100%;
+	height: auto;
+}
+
+#gulpProject {
+	width: 90px;
+	height: auto;
+	position: absolute;
+	bottom: 70%;
+	left: 10px;
+	transform: rotate(25deg);
+	z-index: 2;
+}
+
+#gulpProject:hover {
+	width: 100px;
+	height: auto;
+}
+
+#RPS {
+	width: 150px;
+	height: auto;
+	position: absolute;
+	bottom: 30%;
+	left: 60%;
+	transform: rotate(25deg);
+	z-index: 2;
+}
+
+#RPS:hover {
+	width: 160px;
+	height: auto;
+}
+
+#tape {
+	color: black;
+	font-size: 30px;
+	width: 100%;
+	padding: 5px 0;
+	position: absolute;
+	bottom: 50%;
+	/* Starting position */
+	 -moz-transform:translateX(100%);
+	 -webkit-transform:translateX(100%);	
+	 transform:translateX(100%);
+	 /* Apply animation to this element */	
+	 -moz-animation: tape 30s linear infinite;
+	 -webkit-animation: tape 30s linear infinite;
+	 animation: tape 30s linear infinite;
+}
+
+/* slide accross animation*/
+@-moz-keyframes tape {
+	0%   { -moz-transform: translateX(100%); }
+	100% { -moz-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes tape {
+	0%   { -webkit-transform: translateX(100%); }
+	100% { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes tape {
+ 0%   { 
+		-moz-transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%); 		
+	}
+
+ 100% { 
+		-moz-transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%); 
+	}
+}
