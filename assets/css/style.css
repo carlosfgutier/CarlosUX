@@ -184,25 +184,9 @@ body {
 	z-index: 2;
 }
 
-#toDoButtons {
-	width: 40%;
-	border-top: solid black 3px;
-	border-left: solid black 3px;
-	border-right: solid black 3px;
-	background-color: lightblue;
-}
-
-#toDoButtons:hover {
+#toDosTitle:hover {
 	background-color: pink;
-}
-
-#addToDo {
-	display: inline-block;
-}
-
-#addToDo img {
-	width: 50%;
-	height: auto;
+	cursor: pointer;
 }
 
 #toDosTitle {
@@ -210,11 +194,17 @@ body {
 	font-weight: bolder;
 	display: inline-block;
 	padding: 2px;
+	border-top: solid black 3px;
+	border-left: solid black 3px;
+	border-right: solid black 3px;
+	background-color: lightblue;
 }
 
 #toDosContainer {
 	width: 100%;
+	min-width: 100px;
 	height: 100%;
+	min-height: 100px;
 	padding: 2px;
 	border: solid;
 	border-color: black;
