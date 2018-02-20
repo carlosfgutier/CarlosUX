@@ -175,6 +175,21 @@ body {
 	}
 }
 
+#gulpProject {
+	width: 90px;
+	height: auto;
+	position: absolute;
+	bottom: 70%;
+	left: 10px;
+	transform: rotate(25deg);
+	z-index: 2;
+}
+
+#gulpProject:hover {
+	width: 100px;
+	height: auto;
+}
+
 /*-----------------------------------*/
 /* CONTACT SECTION */
 #contactBody {
