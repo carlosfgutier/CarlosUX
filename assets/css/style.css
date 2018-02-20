@@ -175,6 +175,15 @@ body {
 	}
 }
 
+#toDos {
+	font-size: 25px;
+	width: 40%;
+	height: auto;
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+}
+
 #gulpProject {
 	width: 90px;
 	height: auto;
@@ -194,8 +203,8 @@ body {
 	width: 150px;
 	height: auto;
 	position: absolute;
-	bottom: 20%;
-	left: 200px;
+	bottom: 30%;
+	left: 60%;
 	transform: rotate(25deg);
 	z-index: 2;
 }
