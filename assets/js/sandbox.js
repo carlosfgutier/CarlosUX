@@ -1,15 +1,20 @@
-var showToDos = false;
+const toDos = $('#toDosContainer');
+const toDosTitle = $('#toDosTitle');
+let showToDos = false;
 
 $(document).ready(function(){
-	$('#toDosContainer').hide();
+	toDos.hide();
+	toDosTitle.css('border-bottom', 'solid black 3px');
 });
 
-$('#toDosTitle').click(function() {
+toDosTitle.click(function() {
 	if (showToDos === false) {
-		$('#toDosContainer').show();
+		toDos.show();
+		toDosTitle.css('border-bottom', 'solid black 0px');
 		showToDos = true;
 	} else {
-		$('#toDosContainer').hide();
+		toDos.hide();
+		toDosTitle.css('border-bottom', 'solid black 3px');
 		showToDos = false;
 	}
 });
