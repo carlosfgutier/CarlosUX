@@ -14,6 +14,11 @@
 	cursor: pointer;
 }
 
+#toDosTitle:active {
+	background-color: white;
+	color: black;
+}
+
 #toDosTitle {
 	font-size: 25px;
 	font-weight: bolder;

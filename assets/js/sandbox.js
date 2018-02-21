@@ -2,10 +2,10 @@ const toDos = $('#toDosContainer');
 const toDosTitle = $('#toDosTitle');
 let showToDos = false;
 
-$(document).ready(function(){
+if (showToDos === false) {
 	toDos.hide();
 	toDosTitle.css('border-bottom', 'solid black 3px');
-});
+}
 
 toDosTitle.click(function() {
 	if (showToDos === false) {
