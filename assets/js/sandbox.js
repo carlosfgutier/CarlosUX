@@ -9,11 +9,11 @@ let showToDos = false;
 
 if (showToDos === false) {
 	toDosContainer.hide();
-	toDosContainer.css('background-color', 'white');
-	toDosTitle.css('border-bottom', 'solid black 3px');
 
-	toDosSection.css('max-width', '100px');
-	toDosSection.css('max-height', '30px');
+	toDosTitle.css('border-bottom', 'solid black 3px');
+	toDosContainer.css('background-color', 'white');
+	toDosSection.css('width', '0px');
+	toDosSection.css('max-height', '20%');
 }
 
 toDosTitle.click(function() {
@@ -22,62 +22,43 @@ toDosTitle.click(function() {
 		toDosContainer.show();
 		
 		toDosTitle.css('border-bottom', 'solid black 0px');
-		toDosSection.css('max-width', '20%');
-		toDosSection.css('max-height', '20%');
-		toDosSection.css('background-color', 'white');
-		
+		toDosSection.css('width', '20%');
+		toDosSection.css('height', '20%');
 	} else {
 		showToDos = false;
 		toDosContainer.hide();
 		
 		toDosTitle.css('border-bottom', 'solid black 3px');
-		toDosSection.css('max-width', '100px');
-		toDosSection.css('max-height', '30px');
+		toDosContainer.css('background-color', 'white');
+		toDosSection.css('width', '0px');
+		toDosSection.css('max-height', '20%');
 	}
 });
 
-// DRAG AROUND
-dragElement(toDosSection);
+// DRAG AROUND TO DOS
+toDosSection.mousedown(handle_mousedown);
 
-function dragElement(element) {
-	let pos1 = 0,
-		pos2 = 0,
-		pos3 = 0,
-		pos4 = 0;
+function handle_mousedown(e){
+    window.dragDiv = {};
+    dragDiv.pageX0 = e.pageX;
+    dragDiv.pageY0 = e.pageY;
+    dragDiv.elem = this;
+    dragDiv.offset0 = $(this).offset();
+    
+    function handle_dragging(e){
+        var left = dragDiv.offset0.left + (e.pageX - dragDiv.pageX0);
+        var top = dragDiv.offset0.top + (e.pageY - dragDiv.pageY0);
+        $(dragDiv.elem)
+        .offset({top: top, left: left});
+    };
 
-	if (toDosTitle) {
-		toDosTitle.onmousedown = dragMouseDown;
-	} else {
-		element.onmousedown;
-	}
+    function handle_mouseup(e){
+        $('body')
+        .off('mousemove', handle_dragging)
+        .off('mouseup', handle_mouseup);
+    };
+
+    $('body')
+    .on('mouseup', handle_mouseup)
+    .on('mousemove', handle_dragging);
 };
-
-//dragMouseDown is not running
-
-function dragMouseDown(e) {
-	e = e || window.event;
-
-	pos3 = e.clientX;
-	pos4 = e.clientY;
-
-	document.onmouseup = closeDragElement;
-	document.onmousemove = elementDrag;
-};
-
-function elementDrag(e) {
-	e = e || window.event;
-
-	pos1 = pos3 - e.clientX;
-	pos2 = pos4 - e.clientY;
-	pos3 = e.clientX;
-	pos4 = e.clientY;
-
-	element.style.top = (element.offsetTop - pos2) + "px";
-	element.style.left = (element.offsetLeft - pos1) + "px";
-};
-
-function closeDragElement() {
-	document.onmouseup = null;
-	document.onmousemove = null;
-};
-

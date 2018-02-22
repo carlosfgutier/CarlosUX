@@ -2,8 +2,8 @@
 /* SANDBOX SECTION */
 #toDosSection {
 	width: 20%;
-	min-width: 100px;
-	height: 20%;
+/*	min-width: 100px;
+*/	height: 20%;
 	position: absolute;
 	bottom: 10%;
 	left: 10%;
@@ -21,6 +21,7 @@
 }
 
 #toDosTitle {
+	min-width: 100px;
 	font-size: 25px;
 	font-weight: bolder;
 	display: inline-block;
