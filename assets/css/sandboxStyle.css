@@ -12,7 +12,7 @@
 
 #toDosTitle:hover {
 	background-color: pink;
-	cursor: pointer;
+	cursor: all-scroll;
 }
 
 #toDosTitle:active {
