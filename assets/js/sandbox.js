@@ -7,7 +7,7 @@ const toDosTitle = $('#toDosTitle');
 const toDosSection = $('#toDosSection');
 let showToDos = false;
 
-if (showToDos === false) {
+if (showToDos === false || toDosTitle.click()) {
 	toDosContainer.hide();
 
 	toDosTitle.css('border-bottom', 'solid black 3px');
@@ -16,7 +16,7 @@ if (showToDos === false) {
 	toDosSection.css('max-height', '20%');
 }
 
-toDosTitle.click(function() {
+toDosTitle.hover(function() {
 	if (showToDos === false) {
 		showToDos = true;
 		toDosContainer.show();
