@@ -13,7 +13,7 @@ function respondCanvas(){
 respondCanvas();
 
 //NAV
-$('#menuButton').hover(function() {
+$('#menuSection').hover(function() {
   $('#menu').toggle('slide');
 });
 
