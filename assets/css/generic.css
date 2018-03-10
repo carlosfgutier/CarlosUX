@@ -42,12 +42,21 @@ body {
 	color: black;
 }
 
+#menu a:hover {
+	font-weight: bolder;
+}
+
 #menu li {
 	margin: 15px 0;
 }
 
 .social {
 	width: 30px;
+	height: auto;
+}
+
+.social:hover {
+	width: 35px;
 	height: auto;
 }
 
